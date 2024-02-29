@@ -1,0 +1,25 @@
+.carouselSlider{
+    /* background-color: red; */
+    /* background-image: url('../../../Assets/images/carousel3.png'); */
+    /* background-position-x: center; */
+    /* background-position: calc(50% - 20px) calc(50% - 10px); */
+    /* background-size: cover; */
+    width: 355px;
+    /* height: 390px; */
+    height: 409px;
+    /* clip-path: polygon(50% -5%, 100% 21.4%, 100% 74%, 50% 100%, 0 74%, 0 21%); */
+    clip-path: polygon(50% 0%, 100% 24.6%, 100% 74.9%, 50% 100%, 0 74.9%, 0 24.7%);
+}
+.swiperCarousel{
+    top: 60%;
+    right: 80%;
+    /* position: absolute; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+}
+.swiper{
+    position: relative;
+    top: 200px;
+}

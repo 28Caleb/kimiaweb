@@ -1,0 +1,17 @@
+.banner_bg {
+    width: 100%;
+    height: 70vh;
+    background-size: Cover;
+    background-repeat: no-repeat;
+}
+.CarouselBanner{
+    position: absolute;
+    /* right: 14.8%; */
+    right: 6.5%;
+    top: 34.3%;
+}
+@media(max-width:400px){
+    .banner_bg{
+    height: 76vh;
+    }
+}
