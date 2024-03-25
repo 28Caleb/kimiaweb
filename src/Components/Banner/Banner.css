@@ -1,17 +1,20 @@
 .banner_bg {
     width: 100%;
+    /* width: 1600px; */
     height: 70vh;
+    /* height: 544px; */
     background-size: Cover;
     background-repeat: no-repeat;
+    z-index: 1;
 }
 .CarouselBanner{
     position: absolute;
     /* right: 14.8%; */
-    right: 6.5%;
-    top: 34.3%;
+    right: 5.2%;
+    top: 31.2%;
 }
-@media(max-width:400px){
+/* @media(max-width:400px){
     .banner_bg{
     height: 76vh;
     }
-}
+} */

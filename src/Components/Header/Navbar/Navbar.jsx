@@ -1,13 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Navbar.css'
-import {NavLink, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import NavTop from './NavTop/NavTop'
 import Navblack from './Navblack/Navblack'
-import { BsGrid } from "react-icons/bs";
+// import { BsGrid } from "react-icons/bs";
+import { navItems } from '../../../Data/Navitems'
+import Dropdown from './Dropdown'
+
 
 
 
 const Navbar = () => {
+  const [dropdown, showDropdown] = useState(false);
+
+  const [activeItem, setActiveItem] = useState(null);
+
+  const handleClick = (item) => {
+    setActiveItem(item.id);
+  }
+
 
   return (
     <div className='container-fluid fluid'>
@@ -18,9 +29,9 @@ const Navbar = () => {
         {/* Components de la navTop du header */}
           <NavTop/>
           <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container-fluid">
+            {/* <div class="container-fluid">
               
-              <Link to ='/' className="fw-bold text-decoration-none"><span className='category  fw-bold'><BsGrid /></span> Catégories</Link>
+              <Link to ='/' className="fw-bold text-decoration-none"> Catégories</Link>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon "></span>
               </button>
@@ -47,7 +58,31 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-          </div>
+            </div> */}
+            <div className='container-fluid'>
+              <ul className='navbar-nav'>
+                {navItems.map((item) => {
+                  if(item.title === 'Catégories') {
+                    return(
+                      <li key={item.id} className={item.className}
+                        onMouseEnter={() => showDropdown(true)}
+                        onMouseLeave={() => showDropdown(false)}>
+                        <Link to={item.path}>{item.title}</Link>
+                        {/* cette condition permet de vérifier l'état dropdonw du lien catégorie en disant la liste n'est pas visible par défaut */}
+                        {/* le premier dropdown est pour cacher la liste */}
+
+                        {dropdown && <Dropdown/>}
+                      </li>
+                    )
+                  }
+                 return(
+                  <li key={item.id} className={item.id === activeItem ? `${item.className} active`: item.className}>
+                   <Link to={item.path}  onClick={() => handleClick(item)}>{item.title}</Link>
+                  </li>
+                 )
+                })}
+              </ul>
+            </div>
         </nav>
         </div>
       </div>

@@ -1,7 +1,9 @@
 import React from 'react'
+import ContactBanner from '../Components/Banner/Carousel/ContactBanner';
 const Contact = () => {
   return (
-    <span>Contact</span>
+    // <span>Contact</span>
+    <ContactBanner/>
   )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Carousel.css'
-import { useState } from 'react';
-import { imageSlider } from '../../../Data/data';
+// import { imageSlider } from '../../../Data/data';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -9,7 +8,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow'; // ou tout autre effet que vous souhaitez utiliser
-import img from '../../../Assets/images/carousel1.png'
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+// import { Background } from '../../../Data/data'
+
+
 
 // Option Swiper
 const swiperOptions = {
@@ -23,42 +26,31 @@ const swiperOptions = {
   pagination: {
     clickable: true,
   },
+  autoplay:{
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+  // navigation:true,
+  modules:[Autoplay, Pagination, Navigation]
 };
  
 
-const Carousel = () => {
-  // const [currentState, setCurrentState] = useState(0);
-
-  // const bgImageStyle = {
-  //   backgroundImage: `url(${imageSlider[currentState].url})`,
-  //   backgroundPosition: 'center',
-  //   backgroundSize: 'cover',
-  //   height: '100%',
-  // };
-  console.log('imageSlider:', imageSlider);
-
+const Carousel = ({data}) => {
   return (
     <div className='carouselSlider'>
-      {/* <div className='' style={bgImageStyle}></div> */}
-      <div className='swiperCarousel align-middle '>
-        <Swiper
-        className='swiper'
-        {...swiperOptions}
-      >
-      
-        {imageSlider.map((imageSlider, id) => {
+      <div className='swiperCarousel'>
+        <Swiper className='swiper' {...swiperOptions}>
+        {data.map((item, id) => {
           return (
             <SwiperSlide key={id}>
-              <img src={img} alt={`Slide ${id + 1}`} />
+              <img src={item.url} alt={`Slide ${id + 1}`} />
             </SwiperSlide>
           )
         })}
-        
-        ...
       </Swiper>
       </div>
     </div>
-  
+
   )
 }
 

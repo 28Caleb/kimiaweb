@@ -1,25 +1,88 @@
+/* définition des variables CSS */
+:root{
+    --logoColor: #ffb20bd2;
+    --logoColor2: #000;
+    --btnPrimary: var(--logoColor);
+    --btnSecondary: #ffb00B;
+}
+/*  */
 .carouselSlider{
-    /* background-color: red; */
-    /* background-image: url('../../../Assets/images/carousel3.png'); */
-    /* background-position-x: center; */
-    /* background-position: calc(50% - 20px) calc(50% - 10px); */
-    /* background-size: cover; */
-    width: 355px;
-    /* height: 390px; */
-    height: 409px;
+    width: 397px;
+    height: 458px;
     /* clip-path: polygon(50% -5%, 100% 21.4%, 100% 74%, 50% 100%, 0 74%, 0 21%); */
     clip-path: polygon(50% 0%, 100% 24.6%, 100% 74.9%, 50% 100%, 0 74.9%, 0 24.7%);
+    text-align: center;
+    position: relative;
 }
 .swiperCarousel{
-    top: 60%;
-    right: 80%;
-    /* position: absolute; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    text-align: center;
+    height: 1px;
 }
+/* pour positionner les points du carousel */
 .swiper{
-    position: relative;
-    top: 200px;
+ height: 457px !important;
+}
+/* .textSlider{
+
+} */
+/* BannerText CSS */
+.textContainer{
+    /* background-color: red; */
+    width: 38%;
+    height: 380px;
+    position: absolute;
+    left: 19%;
+    top: 33%;
+}
+.btngrouped{
+    margin-left: 50px;
+    margin-top: 80px;
+}
+.btngrouped>button{
+    margin-right: 20px;
+    width: 200px;
+    border-radius: 20px;
+    transition: 2s;
+}
+.btngrouped>button:hover{
+    transition: 2s;
+}
+.btn-outline-primary{
+    color: var(--logoColor);
+    border-color: var(--logoColor);
+}
+.btn-outline-primary:hover{
+    background-color: var(--logoColor);
+    border-color: white;
+}
+.btn-secondary{
+    background-color: #ffb20b83;
+    opacity: .8;
+}
+.btn-secondary:hover{
+    background-color: var(--btnSecondary);
+    opacity: 1;
+}
+/* Shop carousel */
+.containerShop,.containerThrift{
+    width: 100%;
+    height: 70vh;
+    background-color: rgb(208,208,208,0.1);
+}
+.shopImg{
+    position: absolute;
+    right: 0%;
+}
+.shopImg>img{
+    height: 500px !important;
+}
+/* AboutBanner */
+.AboutBanner,.ContactBanner{
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.containerShop{
+    background-repeat: no-repeat;
+    background-size: cover;
 }

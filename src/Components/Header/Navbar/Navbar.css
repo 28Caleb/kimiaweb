@@ -48,18 +48,22 @@ nav ul li a{
 nav ul li a:hover{
     text-decoration: none;
 }
+
 nav ul li a:not(.active):hover{
     background-color: #ffb20b83;
+    color: black;
 }
 .active{
     background-color: #ffb00b;
     /* font-weight: bold; */
-    transition: 1.0s;
+    /* transition: 1s; */
+    border-radius: 10px;
+    font-weight: bold;
 }
-.category{
+/* .category{
     font-size: 15px;
     margin-bottom: 5px;
-}
+} */
 /* navblack */
 .navblack{
     background-color: black;
